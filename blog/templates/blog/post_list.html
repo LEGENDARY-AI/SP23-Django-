@@ -17,17 +17,132 @@
         font-size: medium;
         font-size: larger;
         padding:  44px 77px;
-
     }
+    body{
+        
+        margin-right: 20px;
+        margin-left: -33px;
+    }
+
+    .navbar{
+        height: 120px;
+        background-color: #6c2551;
+    }
+    .dropdown-menu {
+        font-size: 1.5rem;  /* Increase icon size */
+        padding: 10px 15px; /* Increase button padding */
+        border: 2px solid #000; /* Optional: Make border more visible */
+        width: 200px; /* Increase width */
+        height: 300px; /* Increase height */
+    }
+    .btn-secondary{
+        position: relative;
+        top: 44px;
+    }
+    .offcanvas-start{
+    width: 800px;
+    height: 700px;
+    background-color: #6c2551;
+    color: aliceblue;
+    }
+    .offcanvas{
+        margin-top: 120px;
+    }
+    .offcanvas-body{
+        display:inline-table;
+        justify-content: space-between;
+        color: aliceblue;
+    }a {
+        color: white; /* Changes default link color to white */
+        text-decoration: none; /* Removes underline (optional) */
+    }
+    
+    a:hover {
+        color: lightgray; /* Changes color on hover (optional) */
+        text-decoration: underline;
+    }
+    
+    a:active {
+        color: gray; /* Changes color when clicked (optional) */
+    }
+    .offcanvas-item{
+        font-size: 16px;
+        font-weight: 300px;
+        line-height: 8px;
+        padding: 18px 0;
+        color: aliceblue;
+        font-family: "Noto Serif", Arial, Helvetica, sans-serif;
+    }
+    .btn-primary{
+        background-color: #6c2551;
+        border-color: #6c2551;
+        border-radius: 0px 0px 12px 12px;
+        --bs-btn-active-bg:#6c2551;
+        color:aliceblue;
+    }
+    .btn-primary:hover{
+        background-color: #6c2551;
+        border-color: #6c2551;
+    }
+    .btn-outline-success{
+        color: rgba(238, 241, 244, 0.735);
+        border-color: #232122;
+        --bs-btn-active-bg: #6c2551;
+        --bs-btn-active-border-color: #6c2551;
+    }
+    .btn-outline-success:hover{
+    background-color: #6c2551;
+    border-color: #232122;
+    }
+    
     
 </style>
 <body>
-    <h1>Blog Posts</h1>  
-    <ul>  
+    <header><nav class="navbar navbar-expand-lg" >
+        <div class="container-fluid .bg-info-subtle ">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"></a>
+                </li>
+                <a class="navbar-brand" href="#"><img src="static/images/LOGO.png"></a>
+             </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav></header>
+    <ul> 
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">NEWS</button>
+         <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+               <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Explore & Categories</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+            <div class="offcanvas-item"><a href="#" ><h3>Politics</h3></a></div>
+            <div class="offcanvas-item"><a href="#" ><h3>Business</h3></a></div>
+            <div class="offcanvas-item"><a href="#" ><h3>Entertainment</h3></a></div>
+            <div class="offcanvas-item"><a href="#" ><h3>Sports</h3></a></div>
+            <div class="offcanvas-item"><a href="#" ><h3>Lifestyle</h3></a></div>
+            <div class="offcanvas-item"><a href="#" ><h3>Fashion</h3></a>
+            <div class="offcanvas-item"><a href="#" ><h3>Food And Travel</h3></a></div>
+          </div>
+        </div>
+    </div>
         {% for post in object_list %}  
         <div class="p-3 mb-2 bg-dark-subtle text-dark-emphasis"><li>{{ post.title }} -{{post.name}}- {{ post.created_at }}</li> </div>
         <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">  <div class="C1"> {{ post.content }} </div></div>
         {% endfor %}  
+    
     </ul>  
     
 </body>  
