@@ -23,9 +23,16 @@
         margin-right: 20px;
         margin-left: -33px;
     }
+    .C2{
+        color: aliceblue;
+        font-family: Arial, Helvetica, sans-serif;
+        font-style: initial;
+        font-size: 140px;
+
+    }
 
     .navbar{
-        height: 120px;
+        height: 130px;
         background-color: #6c2551;
     }
     .dropdown-menu {
@@ -94,6 +101,9 @@
     background-color: #6c2551;
     border-color: #232122;
     }
+    .C3{
+        font-size: larger;
+    }
     
     
 </style>
@@ -111,7 +121,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#"></a>
                 </li>
-                <a class="navbar-brand" href="#"><img src="static/images/LOGO.png"></a>
+                <h3 class="C2">ROCKETMAN</h3>
              </ul>
             <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -120,7 +130,8 @@
           </div>
         </div>
       </nav></header>
-    <ul> 
+    <ul>
+        
         <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">NEWS</button>
          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
             <div class="offcanvas-header">
@@ -138,6 +149,9 @@
           </div>
         </div>
     </div>
+    <hr class="C3">
+    <hr class="border border-primary opacity-50">
+
         {% for post in object_list %}  
         <div class="p-3 mb-2 bg-dark-subtle text-dark-emphasis"><li>{{ post.title }} -{{post.name}}- {{ post.created_at }}</li> </div>
         <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">  <div class="C1"> {{ post.content }} </div></div>
