@@ -152,9 +152,17 @@
     <hr class="C3">
     <hr class="border border-primary opacity-50">
 
-        {% for post in object_list %}  
+        {% for post in posts %} 
+        {% if post.picture %}
+            <img src="{{ post.picture.url }}" alt="{{ post.title }}" style="max-width: 100%; height: auto;">
+        {% else %}
+            <p>No image available</p>
+        {% endif %} 
         <div class="p-3 mb-2 bg-dark-subtle text-dark-emphasis"><li>{{ post.title }} -{{post.name}}- {{ post.created_at }}</li> </div>
-        <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">  <div class="C1"> {{ post.content }} </div></div>
+        <div class="p-3 mb-2 bg-info-subtle text-info-emphasis">  <div class="C1"> <div>
+    </div> {{ post.content }} </div>
+    </div>
+        
         {% endfor %}  
     
     </ul>  
