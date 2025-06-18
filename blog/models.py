@@ -3,7 +3,7 @@ from django.db import models
 class Post(models.Model):  
     name= models.CharField(max_length=100, default='Anonymous')  
     title = models.CharField(max_length=50)  
-    content = models.TextField()  
+    content = models.TextField(max_length=500)  
     created_at = models.DateTimeField(auto_now_add=True)  
     picture=models.ImageField( upload_to="images/",default="images/default.PNG")
 
